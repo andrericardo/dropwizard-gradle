@@ -3,9 +3,8 @@ package com.example.helloworld.resources;
 import com.example.helloworld.core.Person;
 import com.example.helloworld.db.PersonDAO;
 import com.google.common.base.Optional;
-import com.sun.jersey.api.NotFoundException;
-import com.yammer.dropwizard.hibernate.UnitOfWork;
-import com.yammer.dropwizard.jersey.params.LongParam;
+import io.dropwizard.hibernate.UnitOfWork;
+import io.dropwizard.jersey.params.LongParam;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -28,9 +27,20 @@ public class PersonResource {
     public Person getPerson(@PathParam("personId") LongParam personId) {
         final Optional<Person> person = peopleDAO.findById(personId.get());
         if (!person.isPresent()) {
-            throw new NotFoundException("No such user.");
+//            throw new NotFoundException("No such user.");
+            return newPerson(personId);
         }
         return person.get();
+    }
+
+
+    public Person newPerson(LongParam personId){
+
+        Person newPerson = new Person();
+        newPerson.setId(personId.get());
+        newPerson.setFullName("Person " + personId.get());
+        newPerson.setJobTitle("kicking ass");
+        return newPerson;
     }
 
 }
