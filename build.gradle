@@ -2,9 +2,9 @@ apply plugin: 'java'
 apply plugin: 'gradle-one-jar'
 apply plugin: 'application'
 
-// Use Java 8 by default
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+// Use Java 7 by default
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
 
 // UTF-8 should be standard by now. So use it!
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
