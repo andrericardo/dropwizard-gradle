@@ -1,4 +1,4 @@
-# Dropwizard + Gradle = &hearts; [![Build Status](https://secure.travis-ci.org/smarchive/dropwizard-gradle.png)](http://travis-ci.org/smarchive/dropwizard-gradle)
+# Dropwizard + Gradle = &hearts; [![Build Status](https://travis-ci.org/andrericardo/dropwizard-gradle.svg)](https://travis-ci.org/andrericardo/dropwizard-gradle)
 
 Minimal example of getting Dropwizard going with Gradle (instead of Maven).
 
