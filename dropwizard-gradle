@@ -1,5 +1,5 @@
 #!/bin/sh
-# /etch/init.d/dropwizard-gradle
+# /etc/init.d/dropwizard-gradle
 #
 
 # Some things that run always
@@ -27,31 +27,31 @@ isRunning() {
 # Carry out specific functions when asked to by the system
 
 case $1 in
-	start)
-		if isRunning; then
-			echo "Already started"
-		else
-			echo "Starting $name"
-			sudo -u "$user" $CMD > "$stdout_log" 2> "$stderr_log" & echo $! > "$pid_file"
-			if ! isRunning; then
-				echo "Unable to start, see $stdout_log and $stderr_log"
-				exit 1
-			fi
-		fi
-	;;
-	stop)
-		if isRunning; then
-			echo "Stopping $name"
-			kill `cat $pid_file`
-			rm "$pid_file"
-		else
-			echo "Not running"
-		fi
-	;;
-	restart)
-		$0 stop
-		$0 start
-	;;
+    start)
+    if isRunning; then
+      echo "Already started"
+    else
+      echo "Starting $name"
+      sudo -u "$user" $CMD > "$stdout_log" 2> "$stderr_log" & echo $! > "$pid_file"
+      if ! isRunning; then
+        echo "Unable to start, see $stdout_log and $stderr_log"
+        exit 1
+      fi
+    fi
+  ;;
+  stop)
+    if isRunning; then
+      echo "Stopping $name"
+      kill `cat $pid_file`
+      rm "$pid_file"
+    else
+      echo "Not running"
+    fi
+  ;;
+  restart)
+    $0 stop
+    $0 start
+  ;;
   *)
     echo "Usage: $name {start|stop|restart}"
     exit 1

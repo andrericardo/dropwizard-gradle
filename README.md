@@ -1,8 +1,13 @@
-# Dropwizard + Gradle = &hearts; [![Build Status](https://travis-ci.org/andrericardo/dropwizard-gradle.svg)](https://travis-ci.org/andrericardo/dropwizard-gradle)
+# Dropwizard + Gradle = &hearts; [![Build Status](https://travis-ci.org/andrericardo/dropwizard-gradle.svg?branch=master)](https://travis-ci.org/andrericardo/dropwizard-gradle)
 
 Minimal example of getting Dropwizard going with Gradle (instead of Maven).
 
-Because the only thing I hate more than Java is XML.
+Because Groovy is much nicer to the eyes than XML.
+
+## Versions
+Dropwizard: 0.8.1
+Java: OpenJDK 7, Oracle JDK 7, Oracle JDK 8
+Gradle: 2.6
 
 ## Gotchas
 
