@@ -8,11 +8,10 @@ touch /var/lock/dropwizard-gradle
 user="andric87"
 
 DROPWIZARD_DIR=/home/andric87/dropwizard-gradle
-CLASSPATH="$DROPWIZARD_DIR"
 JAR="$DROPWIZARD_DIR/dropwizard-gradle-standalone.jar"
 CONFIG="$DROPWIZARD_DIR/helloworld.yml"
 
-CMD="java -classpath $CLASSPATH -jar $JAR server $CONFIG"
+CMD="java -jar $JAR server $CONFIG"
 
 name=`basename $0`
 
